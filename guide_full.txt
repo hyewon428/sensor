@@ -1,0 +1,15 @@
+   센서 시계열 데이터 활용 가이드                              Unnamed: 1           Unnamed: 2        Unnamed: 3 Unnamed: 4        Unnamed: 5
+0                NaN                                     NaN                  NaN               NaN        NaN               NaN
+1                 항목                                      내용                추천 설정            확인할 현상       대상 열                비고
+2               이동평균                    짧은 잡음을 완화해 전체 추세를 확인  5분·15분·30분·60분 창 비교  창이 클수록 지연과 피크 둔화   온도센서 원시값  엑셀 AVERAGE 사용 가능
+3           Peak 포락선                  국소 최대·최소값으로 상·하 포락선 생성            20~60분 구간  단기 과열 및 일시 냉각 탐지   온도센서 원시값  MAX·MIN 또는 피크 탐지
+4     Savitzky–Golay                 다항식 기반으로 형태와 피크를 비교적 보존      창 11~41, 차수 2~4   이동평균보다 피크 형상 보존   온도센서 원시값   Python scipy 권장
+5             이상치 탐지                       센서 오류성 단일 스파이크 탐지     중앙값 필터 또는 Hampel        짧고 큰 값의 급변   온도센서 원시값         이벤트 열과 비교
+6             다변량 비교                      온도·진동·압력의 동시 변화 비교         정규화 후 겹쳐 그리기    부하 이벤트 시 동반 상승   온도·진동·압력     단위가 달라 표준화 권장
+7                NaN                                     NaN                  NaN               NaN        NaN               NaN
+8             데이터 요약                                     NaN                  NaN               NaN        NaN               NaN
+9              측정 기간                2026-08-01 00:00 ~ 23:59                  NaN               NaN        NaN               NaN
+10             측정 간격                                      1분                  NaN               NaN        NaN               NaN
+11             관측치 수                                    1440                  NaN               NaN        NaN               NaN
+12             포함 패턴  완만한 추세, 주기성, 단계 변화, 피크, 음의 피크, 잡음, 이상치                  NaN               NaN        NaN               NaN
+13           핵심 실습 열                            온도센서 원시값(°C)                  NaN               NaN        NaN               NaN
